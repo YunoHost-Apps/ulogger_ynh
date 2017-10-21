@@ -1,7 +1,7 @@
-#![ulogger_logo_small](https://cloud.githubusercontent.com/assets/3366666/24080878/0288f046-0ca8-11e7-9ffd-753e5c417756.png) μlogger
+# ![ulogger_logo_small](https://cloud.githubusercontent.com/assets/3366666/24080878/0288f046-0ca8-11e7-9ffd-753e5c417756.png) μlogger
 [![Install Hubzilla with
 
-YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?appulogger)<br><br>
+[YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?appulogger)<br><br>
 
 - [Yunohost project](https://yunohost.org)
 - [μlogger](https://github.com/bfabiszewski/ulogger-server)
