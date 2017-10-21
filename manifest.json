@@ -1,0 +1,76 @@
+{
+    "name": "ulogger",
+    "id": "ulogger",
+    "packaging_format": 1,
+    "description": {
+        "en": "ulogger package for YunoHost."
+    },
+    "version": "0.3",
+    "url": "https://github.com/bfabiszewski/ulogger-server",
+    "license": "GPL",
+    "maintainer": {
+        "name": "Anmol Sharma",
+        "email": "anmol@datamol.org"
+    },
+    "requirements": {
+        "yunohost": ">= 2.7.2"
+    },
+    "multi_instance": true,
+    "services": [
+        "nginx",
+        "php5-fpm",
+        "mysql"
+    ],
+    "arguments": {
+        "install" : [
+            {
+                "name": "domain",
+                "type": "domain",
+                "ask": {
+                    "en": "Choose a domain name for ulogger"
+                },
+                "example": "example.com"
+            },
+            {
+                "name": "path",
+                "type": "path",
+                "ask": {
+                    "en": "Choose a path for ulogger"
+                },
+                "example": "/example",
+                "default": "/example"
+            },
+            {
+                "name": "admin",
+                "ask": {
+                    "en": "Choose an admin user"
+                },
+                "example": "johndoe"
+            },
+            {
+                "name": "is_public",
+                "type": "boolean",
+                "ask": {
+                    "en": "Is it a public application?"
+                },
+                "default": true
+            },
+            {
+                "name": "language",
+                "ask": {
+                    "en": "Choose the application language"
+                },
+                "choices": ["fr", "en", "pl", "de", "hu", "it" ],
+                "default": "en"
+            },
+            {
+                "name": "password",
+                "type": "password",
+                "ask": {
+                    "en": "Password for the admin account (At least 6 characters long)"
+                },
+                "example": "mystrogpassword"
+            }
+        ]
+    }
+}

@@ -1,0 +1,6 @@
+SOURCE_URL=https://github.com/bfabiszewski/ulogger-server/archive/v0.3.zip
+SOURCE_SUM=38a74d10df638dc6df6b1dd269bd64c9a0131375f656c4fb3cf89270256039c3
+SOURCE_SUM_PRG=sha256sum
+SOURCE_FORMAT=zip
+SOURCE_IN_SUBDIR=true
+SOURCE_FILENAME=
