@@ -99,9 +99,9 @@ ynh_system_user_create $app
 #=================================================
 
 # Verify the checksum and backup the file if it's different
-ynh_backup_if_checksum_is_different "$final_path/CONFIG_FILE"
+ynh_backup_if_checksum_is_different "$final_path/conf.php"
 # Recalculate and store the config file checksum into the app settings
-ynh_store_file_checksum "$final_path/CONFIG_FILE"
+ynh_store_file_checksum "$final_path/config.php"
 
 
 #=================================================

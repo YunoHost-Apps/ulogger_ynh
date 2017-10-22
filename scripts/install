@@ -25,7 +25,7 @@ path_url=$YNH_APP_ARG_PATH
 admin=$YNH_APP_ARG_ADMIN
 is_public=$YNH_APP_ARG_IS_PUBLIC
 language=$YNH_APP_ARG_LANGUAGE
-admin_password=$(openssl passwd -1 -salt xyz $YNH_APP_ARG_PASSWORD)
+password=$YNH_APP_ARG_PASSWORD
 
 # This is a multi-instance app, meaning it can be installed several times independently
 # The id of the app as stated in the manifest is available as $YNH_APP_ID
@@ -55,8 +55,9 @@ ynh_webpath_available $domain $path_url
 ynh_webpath_register $app $domain $path_url
 
 # Check password strength
-[[ ${#admin_password} -gt 6 ]] || ynh_die \
+[[ ${#password} -gt 6 ]] || ynh_die \
 "The password is too weak, it must be longer than 6 characters"
+admin_password=$(openssl passwd -1 -salt xyz $password)
 
 #=================================================
 # STORE SETTINGS FROM MANIFEST
@@ -139,7 +140,7 @@ yunohost app ssowatconf
 systemctl reload nginx
 
 # Installation with curl
-curl --data "command=setup" https://monica.datamol.org/scripts/setup.php
+curl --data "command=setup" https://$domain$path_url/scripts/setup.php
 #Add the admin account to the database
 ynh_mysql_connect_as "$db_name" "$db_pwd" "$db_name" < "../conf/admin.sql"
 #Disable setup for security
