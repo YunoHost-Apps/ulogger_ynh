@@ -125,8 +125,7 @@ ynh_replace_string "__dbuser__" "$db_name" "$final_path/config.php"
 ynh_replace_string "__dbpass__" "$db_pwd" "$final_path/config.php"
 ynh_replace_string "__admin__" "$admin" "$final_path/config.php"
 ynh_replace_string "__lang__" "$language" "$final_path/config.php"
-ynh_replace_string "enabled = false;" "enabled = true;" "$final_path/scripts/setup.php"
-
+ynh_replace_string "^\$enabled = false;" "\$enabled = true;" "$final_path/scripts/setup.php"
 # Replace variables in sql scripts
 ynh_replace_string "__admin__" "$admin" ../conf/admin.sql
 ynh_replace_string "__admin_pwd__" "$admin_password" ../conf/admin.sql
@@ -144,8 +143,7 @@ curl --data "command=setup" https://$domain$path_url/scripts/setup.php
 #Add the admin account to the database
 ynh_mysql_connect_as "$db_name" "$db_pwd" "$db_name" < "../conf/admin.sql"
 #Disable setup for security
-ynh_replace_string "enabled = true;" "enabled = false;" "$final_path/scripts/setup.php"
-
+ynh_replace_string "^\$enabled = true;" "\$enabled = false;" "$final_path/scripts/setup.php"
 
 #=================================================
 # STORE THE CHECKSUM OF THE CONFIG FILE
