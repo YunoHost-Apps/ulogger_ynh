@@ -27,5 +27,7 @@ This is a web application for real-time collection of geolocation data, tracks v
 - export tracks to gpx and kml
 - import tracks from gpx
 
+## To-Do's
+- [ ] Use config file from the sources rather then conf/config.php for the configuration.
 
 **Multi-user:** Yes

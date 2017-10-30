@@ -16,69 +16,53 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
-
 // This is default configuration file.
 // Copy it to config.php and customize
-
 // default map drawing framework
-// (gmaps = google maps, openlayers = openlayers/osm)
-//$mapapi = "gmaps";
-$mapapi = "openlayers";
-
-// openlayers additional map layers
-// OpenCycleMap (0 = no, 1 = yes)
-$layer_ocm = 1;
-// MapQuest-OSM (0 = no, 1 = yes)
-$layer_mq = 1;
-// osmapa.pl (0 = no, 1 = yes)
-$layer_osmapa = 1;
-// UMP (0 = no, 1 = yes)
-$layer_ump = 1;
-
+//$mapapi = "gmaps"; // google maps
+//$mapapi = "openlayers"; // openlayers 2
+$mapapi = "openlayers3"; // openlayers 3+
+// openlayers additional map layers in XYZ format
+// name => url
+$ol_layers['OpenCycleMap'] = 'https://{a-c}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png'; // ?apikey=[API_KEY]
+$ol_layers['OpenTopoMap'] = 'https://{a-c}.tile.opentopomap.org/{z}/{x}/{y}.png';
+$ol_layers['ESRI'] = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}';
+$ol_layers['UMP'] = 'http://{1-3}.tiles.ump.waw.pl/ump_tiles/{z}/{x}/{y}.png';
+$ol_layers['Osmapa.pl'] = 'http://{a-c}.tile.openstreetmap.pl/osmapa.pl/{z}/{x}/{y}.png';
 // default coordinates for initial map
 $init_latitude = 52.23;
 $init_longitude = 21.01;
-
 // you may set your google maps api key
-// this is not obligatory by now
-//$gkey = "";
-
+$gkey = "";
 // MySQL config
 $dbhost = "localhost"; // mysql host, eg. localhost
 $dbuser = "__dbuser__"; // database user
 $dbpass = "__dbpass__"; // database pass
 $dbname = "__dbuser__"; // database name
 $dbprefix = ""; // optional table names prefix, eg. "ulogger_"
-
 // other
 // require login/password authentication
 // (0 = no, 1 = yes)
 $require_authentication = 1;
-
 // all users tracks are visible to authenticated user
 // (0 = no, 1 = yes)
 $public_tracks = 0;
-
 // admin user, who
 // - can add new users
 // - can edit all tracks, users
 // - has access to all users locations
 // none if empty
 $admin_user = "__admin__";
-
 // miniumum required length of user password
 $pass_lenmin = 12;
-
 // required strength of user password
 //   0 = no requirements,
 //   1 = require mixed case letters (lower and upper),
 //   2 = require mixed case and numbers,
 //   3 = require mixed case, numbers and non-alphanumeric characters
 $pass_strength = 2;
-
 // Default interval in seconds for live auto reload
 $interval = 10;
-
 // Default language
 // (en, pl, de, hu)
 $lang = "__lang__";
@@ -87,10 +71,8 @@ $lang = "__lang__";
 //$lang = "hu";
 //$lang = "fr";
 //$lang = "it";
-
 // units
 // (metric, imperial)
 $units = "metric";
 //$units = "imperial";
-
 ?>
