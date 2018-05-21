@@ -10,7 +10,7 @@
 		admin="john"	(USER)
 		is_public=1	(PUBLIC|public=1|private=0)
 		language="fr"
-		password="pass"
+		password="password012346789"
 	; Checks
 		pkg_linter=1
 		setup_sub_dir=1
