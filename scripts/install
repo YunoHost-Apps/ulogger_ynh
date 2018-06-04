@@ -146,7 +146,7 @@ yunohost app ssowatconf
 systemctl reload nginx
 
 # Installation with curl
-curl --data "command=setup" https://$domain$path_url/scripts/setup.php
+ynh_local_curl "https://$domain$path_url/scripts/setup.php" "command=setup" 
 #Add the admin account to the database
 ynh_mysql_connect_as "$db_name" "$db_pwd" "$db_name" < "../conf/admin.sql"
 #Disable setup for security
