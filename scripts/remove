@@ -46,6 +46,13 @@ ynh_secure_remove "$final_path"
 ynh_remove_nginx_config
 
 #=================================================
+# REMOVE PHP-FPM CONFIGURATION
+#=================================================
+
+# Remove the dedicated php-fpm config
+ynh_remove_fpm_config
+
+#=================================================
 # GENERIC FINALIZATION
 #=================================================
 # REMOVE DEDICATED USER

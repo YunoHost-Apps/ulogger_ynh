@@ -109,6 +109,13 @@ ynh_add_nginx_config
 # Create a system user
 ynh_system_user_create $app
 
+#=================================================
+# PHP-FPM CONFIGURATION
+#=================================================
+
+# Create a dedicated php-fpm config
+ynh_add_fpm_config
+
 
 #=================================================
 # SPECIFIC SETUP
@@ -159,7 +166,7 @@ ynh_store_file_checksum "$final_path/config.php"
 #=================================================
 
 # Set permissions to app files
-chown -R root: $final_path
+chown -R $app: $final_path
 
 
 #=================================================
