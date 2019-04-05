@@ -75,4 +75,9 @@ $lang = "__lang__";
 // (metric, imperial)
 $units = "metric";
 //$units = "imperial";
+//$units = "nautical";
+// These need to be copied to config.php
+$strokeWeight = 2;
+$strokeColor = '#FF0000';
+$strokeOpacity = 1.0;
 ?>
