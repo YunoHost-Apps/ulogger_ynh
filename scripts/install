@@ -234,7 +234,7 @@ message=" $app was successfully installed :)
 Please open your $app domain: https://$domain$path_url
 
 The admin username is: $admin
-The admin password is: $admin_password
+The admin password is: $password
 
 If you are facing any problem or want to improve this app, please open a new issue here: https://github.com/YunoHost-Apps/ulogger_ynh/issues"
 
