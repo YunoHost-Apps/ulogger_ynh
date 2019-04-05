@@ -56,7 +56,6 @@ test ! -e "$final_path" || ynh_die "This path already contains a folder"
 # Register (book) web path
 ynh_webpath_register $app $domain $path_url
 
-"The password is too weak, it must be longer than 6 characters"
 admin_password=$(openssl passwd -1 -salt xyz $password)
 
 #=================================================
