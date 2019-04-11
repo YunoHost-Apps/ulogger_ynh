@@ -38,11 +38,12 @@
                 "ask": {
                     "en": "Choose a path for ulogger"
                 },
-                "example": "/example",
-                "default": "/example"
+                "example": "/ulogger",
+                "default": "/ulogger"
             },
             {
                 "name": "admin",
+                "type": "string",
                 "ask": {
                     "en": "Choose an admin user"
                 },
