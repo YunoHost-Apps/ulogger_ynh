@@ -180,6 +180,13 @@ systemctl reload nginx
 ynh_print_info "Finalizing installation..."
 
 ynh_local_curl "/scripts/setup.php" "command=setup" 
+
+# Remove the public access
+if [ $is_public -eq 0 ]
+then
+	ynh_app_setting_delete $app skipped_uris
+fi
+
 #Add the admin account to the database
 ynh_mysql_connect_as "$db_name" "$db_pwd" "$db_name" < "../conf/admin.sql"
 #Disable setup for security
