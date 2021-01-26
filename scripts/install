@@ -81,8 +81,6 @@ cp -r ../conf/config.php $final_path
 #=================================================
 ynh_script_progression --message="Configuring nginx web server..."
 
-### `ynh_add_nginx_config` will use the file conf/nginx.conf
-
 # Create a dedicated nginx config
 ynh_add_nginx_config
 
@@ -151,10 +149,6 @@ ynh_replace_string "^\$enabled = true;" "\$enabled = false;" "$final_path/script
 #=================================================
 # STORE THE CONFIG FILE CHECKSUM
 #=================================================
-
-### `ynh_store_file_checksum` is used to store the checksum of a file.
-### That way, during the upgrade script, by using `ynh_backup_if_checksum_is_different`,
-### you can make a backup of this file before modifying it again if the admin had modified it.
 
 # Calculate and store the config file checksum into the app settings
 ynh_store_file_checksum "$final_path/config.php"

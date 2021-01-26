@@ -96,4 +96,3 @@ systemctl reload nginx
 #=================================================
 
 ynh_print_info "Restoration completed for $app"
-

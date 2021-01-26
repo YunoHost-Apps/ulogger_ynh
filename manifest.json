@@ -3,7 +3,7 @@
     "id": "ulogger",
     "packaging_format": 1,
     "description": {
-        "en": "A real-time collection of geolocation data, tracks viewing and management.",
+        "en": "Real-time collection of geolocation data, tracks viewing and management.",
         "fr": "Géolocalisation en temps réel, gestion et affichage de traces."
     },
     "version": "0.5~ynh1",
