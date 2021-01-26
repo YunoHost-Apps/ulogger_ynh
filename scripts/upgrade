@@ -95,10 +95,10 @@ ynh_setup_source "$final_path"
 
 
 #copy cofig.php from tmp to final_path
-sudo cp -a "$tmpdir/config.php" "${final_path}"
+cp -a "$tmpdir/config.php" "${final_path}"
 
 #remove tmp dir
-sudo rm -Rf "$tmpdir"
+ynh_secure_remove "$tmpdir"
 
 
 #=================================================
@@ -134,7 +134,6 @@ ynh_add_fpm_config
 ynh_backup_if_checksum_is_different "$final_path/conf.php"
 # Recalculate and store the config file checksum into the app settings
 ynh_store_file_checksum "$final_path/config.php"
-
 
 #=================================================
 # GENERIC FINALIZATION
