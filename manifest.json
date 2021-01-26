@@ -8,7 +8,7 @@
     },
     "version": "0.5~ynh1",
     "url": "https://github.com/bfabiszewski/ulogger-server",
-    "license": "GPL",
+    "license": "AGPL-3.0-only",
     "maintainer": {
         "name": "Anmol Sharma",
         "email": "anmol@datamol.org"
