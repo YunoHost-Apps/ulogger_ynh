@@ -99,6 +99,7 @@ ynh_script_progression --message="Configuring PHP-FPM..."
 
 # Create a dedicated php-fpm config
 ynh_add_fpm_config
+phpversion=$(ynh_app_setting_get --app=$app --key=phpversion)
 
 #=================================================
 # SPECIFIC SETUP
@@ -120,13 +121,12 @@ ynh_replace_string "^\$enabled = false;" "\$enabled = true;" "$final_path/script
 ynh_replace_string "__admin__" "$admin" ../conf/admin.sql
 ynh_replace_string "__admin_pwd__" "$admin_password" ../conf/admin.sql
 
-
 #=================================================
 # SETUP APPLICATION WITH CURL
 #=================================================
 
 # Set the app as temporarily public for cURL call
-ynh_permission_update --permission "main" --add "visitors"
+ynh_permission_update --permission="main" --add="visitors"
 
 # Reload NGINX
 ynh_systemd_action --service_name=nginx --action=reload
@@ -164,7 +164,7 @@ ynh_script_progression --message="Configuring permissions..."
 # Make app public if necessary or protect it
 if [ $is_public -eq 0 ]
 then
-	ynh_permission_update --permission "main" --remove "visitors"
+	ynh_permission_update --permission="main" --remove="visitors"
 fi
 
 #=================================================

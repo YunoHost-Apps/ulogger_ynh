@@ -27,10 +27,11 @@ ynh_script_progression --message="Loading settings..."
 
 app=$YNH_APP_INSTANCE_NAME
 
-domain=$(ynh_app_setting_get $app domain)
-path_url=$(ynh_app_setting_get $app path)
-final_path=$(ynh_app_setting_get $app final_path)
-db_name=$(ynh_app_setting_get $app db_name)
+domain=$(ynh_app_setting_get --app=$app --key=domain)
+path_url=$(ynh_app_setting_get --app=$app --key=path)
+final_path=$(ynh_app_setting_get --app=$app --key=final_path)
+db_name=$(ynh_app_setting_get --app=$app --key=db_name)
+phpversion=$(ynh_app_setting_get --app=$app --key=phpversion)
 
 #=================================================
 # CHECK IF THE APP CAN BE RESTORED
@@ -78,7 +79,7 @@ ynh_mysql_connect_as $db_name $db_pwd $db_name < ./db.sql
 # RESTORE THE PHP-FPM CONFIGURATION
 #=================================================
 
-ynh_restore_file "/etc/php/7.0/fpm/pool.d/$app.conf"
+ynh_restore_file "/etc/php/$phpversion/fpm/pool.d/$app.conf"
 
 #=================================================
 # GENERIC FINALIZATION
@@ -87,7 +88,7 @@ ynh_restore_file "/etc/php/7.0/fpm/pool.d/$app.conf"
 #=================================================
 ynh_script_progression --message="Reloading NGINX web server and PHP-FPM..."
 
-ynh_systemd_action --service_name=php7.0-fpm --action=reload
+ynh_systemd_action --service_name=php$phpversion-fpm --action=reload
 ynh_systemd_action --service_name=nginx --action=reload
 
 #=================================================

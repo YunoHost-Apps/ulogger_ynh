@@ -16,12 +16,13 @@ ynh_script_progression --message="Loading installation settings..."
 
 app=$YNH_APP_INSTANCE_NAME
 
-domain=$(ynh_app_setting_get $app domain)
-path_url=$(ynh_app_setting_get $app path)
-admin=$(ynh_app_setting_get $app admin)
-is_public=$(ynh_app_setting_get $app is_public)
-final_path=$(ynh_app_setting_get $app final_path)
-db_name=$(ynh_app_setting_get $app db_name)
+domain=$(ynh_app_setting_get --app=$app --key=domain)
+path_url=$(ynh_app_setting_get --app=$app --key=path)
+admin=$(ynh_app_setting_get --app=$app --key=admin)
+is_public=$(ynh_app_setting_get --app=$app --key=is_public)
+final_path=$(ynh_app_setting_get --app=$app --key=final_path)
+db_name=$(ynh_app_setting_get --app=$app --key=db_name)
+phpversion=$(ynh_app_setting_get --app=$app --key=phpversion)
 
 #=================================================
 # ENSURE DOWNWARD COMPATIBILITY
@@ -47,6 +48,13 @@ fi
 if [ -z $final_path ]; then
 	final_path=/var/www/$app
 	ynh_app_setting_set $app final_path $final_path
+fi
+
+# Cleaning legacy permissions
+if ynh_legacy_permissions_exists; then
+	ynh_legacy_permissions_delete_all
+
+	ynh_app_setting_delete --app=$app --key=is_public
 fi
 
 #=================================================
@@ -95,7 +103,7 @@ ynh_setup_source "$final_path"
 
 
 #copy cofig.php from tmp to final_path
-cp -a "$tmpdir/config.php" "${final_path}"
+cp -a "$tmpdir/config.php" "$final_path"
 
 #remove tmp dir
 ynh_secure_remove "$tmpdir"
