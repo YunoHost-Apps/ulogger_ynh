@@ -43,7 +43,7 @@ test ! -e "$final_path" || ynh_die "This path already contains a folder"
 # Register (book) web path
 ynh_webpath_register $app $domain $path_url
 
-admin_password=$(openssl passwd -1 -salt xyz $password)
+admin_pwd=$(openssl passwd -1 -salt xyz $password)
 
 #=================================================
 # STORE SETTINGS FROM MANIFEST
@@ -112,14 +112,13 @@ chown -R $app: $final_path
 # MODIFY A CONFIG FILE
 #=================================================
 
-ynh_replace_string "__dbuser__" "$db_name" "$final_path/config.php"
-ynh_replace_string "__dbpass__" "$db_pwd" "$final_path/config.php"
-ynh_replace_string "__admin__" "$admin" "$final_path/config.php"
-ynh_replace_string "__lang__" "$language" "$final_path/config.php"
+ynh_add_config --template="../conf/config.php" --destination="$final_path/config.php"
+
 ynh_replace_string "^\$enabled = false;" "\$enabled = true;" "$final_path/scripts/setup.php"
-# Replace variables in sql scripts
-ynh_replace_string "__admin__" "$admin" ../conf/admin.sql
-ynh_replace_string "__admin_pwd__" "$admin_password" ../conf/admin.sql
+
+# Replace variables in SQL scripts
+ynh_replace_string "__ADMIN__" "$admin" ../conf/admin.sql
+ynh_replace_string "__ADMIN_PWD__" "$admin_pwd" ../conf/admin.sql
 
 #=================================================
 # SETUP APPLICATION WITH CURL
