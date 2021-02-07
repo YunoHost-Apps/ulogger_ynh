@@ -25,6 +25,12 @@ db_name=$(ynh_app_setting_get --app=$app --key=db_name)
 phpversion=$(ynh_app_setting_get --app=$app --key=phpversion)
 
 #=================================================
+# CHECK VERSION
+#=================================================
+
+upgrade_type=$(ynh_check_app_version_changed)
+
+#=================================================
 # ENSURE DOWNWARD COMPATIBILITY
 #=================================================
 ynh_script_progression --message="Ensuring downward compatibility..."
@@ -77,36 +83,28 @@ ynh_abort_if_errors
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 
-# Download, check integrity, uncompress and patch the source from app.src
-# Create a temporary directory
-tmpdir="$(ynh_smart_mktemp 300)"
+if [ "$upgrade_type" == "UPGRADE_APP" ]
+then
+	ynh_script_progression --message="Upgrading source files..." --weight=1
 
-# Backup the config file in the temp dir
-cp -a "$final_path/config.php" "$tmpdir/config.php"
+	# Create a temporary directory
+	tmpdir="$(mktemp -d)"
 
-# Remove the app directory securely
-ynh_secure_remove "$final_path"
+	# Backup the config file in the temp dir
+	cp -a "$final_path/config.php" "$tmpdir/config.php"
 
-# If final_path doesn't exist, create it
-if [ -z $final_path ]; then
-	final_path=/var/www/$app
-	ynh_app_setting_set $app final_path $final_path
-fi 
+	# Remove the app directory securely
+	ynh_secure_remove --file="$final_path"
 
-#=================================================
-# DOWNLOAD, CHECK AND UNPACK SOURCE
-#=================================================
-ynh_script_progression --message="Upgrading source files..."
+	# Download, check integrity, uncompress and patch the source from app.src
+	ynh_setup_source --dest_dir="$final_path"
 
-# Download, check integrity, uncompress and patch the source from app.src
-ynh_setup_source "$final_path"
+	#copy cofig.php from tmp to final_path
+	cp -a "$tmpdir/config.php" "$final_path/config.php"
 
-
-#copy cofig.php from tmp to final_path
-cp -a "$tmpdir/config.php" "$final_path"
-
-#remove tmp dir
-ynh_secure_remove "$tmpdir"
+	# Remove the tmp directory securely
+	ynh_secure_remove --file="$tmpdir"	
+fi
 
 #=================================================
 # NGINX CONFIGURATION
@@ -137,6 +135,7 @@ ynh_add_fpm_config
 #=================================================
 
 ynh_backup_if_checksum_is_different "$final_path/conf.php"
+
 # Recalculate and store the config file checksum into the app settings
 ynh_store_file_checksum "$final_path/config.php"
 
