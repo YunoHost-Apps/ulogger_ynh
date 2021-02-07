@@ -11,6 +11,10 @@ This is a web application for real-time collection of geolocation data, tracks v
 
 **Version:** 1.0
 
+## Screenshots
+
+![](screenshot.png)
+
 ## Demo
 * [Official demo](http://ulogger.fabiszewski.net/) (login: demo, password: demo)
 
