@@ -63,6 +63,7 @@ ynh_script_progression --message="Creating a MySQL database..."
 
 db_name=$(ynh_sanitize_dbid --db_name=$app)
 db_user=$db_name
+db_pwd=$(ynh_app_setting_get --app=$app --key=mysqlpwd)
 ynh_app_setting_set --app=$app --key=db_name --value=$db_name
 ynh_mysql_setup_db --db_user=$db_user --db_name=$db_name
 
@@ -111,13 +112,16 @@ chown -R $app: $final_path
 # MODIFY A CONFIG FILE
 #=================================================
 
-ynh_add_config --template="../conf/config.php" --destination="$final_path/config.php"
+cp "../conf/config.php" "$final_path/config.php"
+
+ynh_replace_string --match_string="__DB_PWD__" --replace_string="$db_pwd" --target_file="$final_path/config.php"
+ynh_replace_string --match_string="__DB_USER__" --replace_string="$db_user" --target_file="$final_path/config.php"
 
 ynh_replace_string "^\$enabled = false;" "\$enabled = true;" "$final_path/scripts/setup.php"
 
 # Replace variables in SQL scripts
-ynh_replace_string "__ADMIN__" "$admin" ../conf/admin.sql
-ynh_replace_string "__ADMIN_PWD__" "$admin_pwd" ../conf/admin.sql
+ynh_replace_string --match_string="__ADMIN__" --replace_string="$admin" ../conf/admin.sql
+ynh_replace_string --match_string="__ADMIN_PWD__" --replace_string="$admin_pwd" ../conf/admin.sql
 
 #=================================================
 # SETUP APPLICATION WITH CURL
