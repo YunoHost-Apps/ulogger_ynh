@@ -3,13 +3,13 @@
     "id": "ulogger",
     "packaging_format": 1,
     "description": {
-        "en": "Real-time collection of geolocation data, tracks viewing and management.",
-        "fr": "Géolocalisation en temps réel, gestion et affichage de traces."
+        "en": "Real-time collection of geolocation data, tracks viewing and management",
+        "fr": "Géolocalisation en temps réel, gestion et affichage de traces"
     },
     "version": "1.1~ynh1",
     "url": "https://github.com/bfabiszewski/ulogger-server",
      "upstream": {
-        "license": "AGPL-3.0",
+        "license": "AGPL-3.0-only",
         "website": "https://github.com/bfabiszewski/ulogger-server",
         "code": "https://github.com/bfabiszewski/ulogger-server"
     },
@@ -41,8 +41,7 @@
             },
             {
                 "name": "admin",
-                "type": "string",
-                "example": "johndoe"
+                "type": "user"
             },
             {
                 "name": "is_public",
