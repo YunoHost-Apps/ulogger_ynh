@@ -32,7 +32,6 @@
             {
                 "name": "domain",
                 "type": "domain",
-                "example": "example.com"
             },
             {
                 "name": "path",
