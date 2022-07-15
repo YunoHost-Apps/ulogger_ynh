@@ -3,13 +3,13 @@
     "id": "ulogger",
     "packaging_format": 1,
     "description": {
-        "en": "Real-time collection of geolocation data, tracks viewing and management.",
-        "fr": "Géolocalisation en temps réel, gestion et affichage de traces."
+        "en": "Real-time collection of geolocation data, tracks viewing and management",
+        "fr": "Géolocalisation en temps réel, gestion et affichage de traces"
     },
     "version": "1.1~ynh1",
     "url": "https://github.com/bfabiszewski/ulogger-server",
      "upstream": {
-        "license": "AGPL-3.0",
+        "license": "AGPL-3.0-only",
         "website": "https://github.com/bfabiszewski/ulogger-server",
         "code": "https://github.com/bfabiszewski/ulogger-server"
     },
@@ -40,11 +40,6 @@
                 "default": "/ulogger"
             },
             {
-                "name": "admin",
-                "type": "string",
-                "example": "johndoe"
-            },
-            {
                 "name": "is_public",
                 "type": "boolean",
                 "help": {
@@ -62,6 +57,18 @@
                 },
                 "choices": ["fr", "en", "pl", "de", "hu", "it" ],
                 "default": "en"
+            },
+            {
+                "name": "admin",
+                "type": "user"
+            },
+            {
+                "name": "password",
+                "type": "password",
+                "help": {
+                    "en": "Use the help field to add an information for the admin about this question.",
+                    "fr": "Utilisez le champ aide pour ajouter une information à l'intention de l'administrateur à propos de cette question."
+                }
             }
         ]
     }
