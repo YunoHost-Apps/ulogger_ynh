@@ -54,7 +54,6 @@
                 },
                  "default": true
             },
-                            },
             {
                 "name": "language",
                 "type": "string",
