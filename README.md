@@ -25,7 +25,7 @@ Real-time collection of geolocation data, tracks viewing and management
 
 ## Disclaimers / important information
 
-## Configuration
+*[Lire ce readme en français.](./README_fr.md)*
 
 ### Login
 **Name:** The user selected during installation
