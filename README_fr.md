@@ -15,9 +15,14 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 
 ## Vue d'ensemble
 
-Géolocalisation en temps réel, gestion et affichage de traces.
+Géolocalisation en temps réel, gestion et affichage de traces
 
 **Version incluse :** 1.1~ynh1
+
+## Captures d'écran
+
+![Capture d'écran de ulogger](./doc/screenshots/screenshot.png)
+
 ## Avertissements / informations importantes
 
 ## Configuration

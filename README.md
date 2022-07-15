@@ -15,9 +15,14 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 ## Overview
 
-Real-time collection of geolocation data, tracks viewing and management.
+Real-time collection of geolocation data, tracks viewing and management
 
 **Shipped version:** 1.1~ynh1
+
+## Screenshots
+
+![Screenshot of ulogger](./doc/screenshots/screenshot.png)
+
 ## Disclaimers / important information
 
 ## Configuration
