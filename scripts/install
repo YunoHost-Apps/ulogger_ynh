@@ -54,13 +54,20 @@ ynh_app_setting_set --app=$app --key=admin --value=$admin
 ynh_app_setting_set --app=$app --key=language --value=$language
 
 #=================================================
+# CREATE DEDICATED USER
+#=================================================
+ynh_script_progression --message="Configuring system user..."
+
+# Create a system user
+ynh_system_user_create --username=$app --home_dir="$final_path"
+
+#=================================================
 # CREATE A MYSQL DATABASE
 #=================================================
 ynh_script_progression --message="Creating a MySQL database..."
 
 db_name=$(ynh_sanitize_dbid --db_name=$app)
 db_user=$db_name
-db_pwd=$(ynh_app_setting_get --app=$app --key=mysqlpwd)
 ynh_app_setting_set --app=$app --key=db_name --value=$db_name
 ynh_mysql_setup_db --db_user=$db_user --db_name=$db_name
 
@@ -80,14 +87,6 @@ ynh_script_progression --message="Configuring NGINX web server..."
 
 # Create a dedicated nginx config
 ynh_add_nginx_config
-
-#=================================================
-# CREATE DEDICATED USER
-#=================================================
-ynh_script_progression --message="Configuring system user..."
-
-# Create a system user
-ynh_system_user_create $app
 
 #=================================================
 # PHP-FPM CONFIGURATION
@@ -113,6 +112,7 @@ cp "../conf/config.php" "$final_path/config.php"
 
 ynh_replace_string --match_string="__DB_PWD__" --replace_string="$db_pwd" --target_file="$final_path/config.php"
 ynh_replace_string --match_string="__DB_USER__" --replace_string="$db_user" --target_file="$final_path/config.php"
+ynh_replace_string --match_string="__DB_NAME__" --replace_string="$db_name" --target_file="$final_path/config.php"
 
 ynh_replace_string --match_string="\$enabled = false;" --replace_string="\$enabled = true;" --target_file="$final_path/scripts/setup.php"
 
