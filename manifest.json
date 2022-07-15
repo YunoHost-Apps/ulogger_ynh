@@ -48,11 +48,12 @@
             {
                 "name": "is_public",
                 "type": "boolean",
-                "default": true
                 "help": {
                     "en": "If enabled, ulogger will be accessible by people who do not have an account. This can be changed later via the webadmin.",
                     "fr": "Si cette case est cochée, ulogger sera accessible aux personnes n’ayant pas de compte. Vous pourrez changer ceci plus tard via la webadmin."
                 },
+                 "default": true
+            },
                             },
             {
                 "name": "language",
