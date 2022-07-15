@@ -20,7 +20,8 @@ This is a web application for real-time collection of geolocation data, tracks v
 
 ## Configuration
 
-How to configure this app: From an admin panel, a plain file with SSH, or any other way.
+- How to configure this app: From an admin panel, a plain file with SSH, or any other way.
+- Visit `/scripts/setup.php` and follow instructions to complete setup.
 
 ## Documentation
 
