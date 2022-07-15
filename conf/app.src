@@ -1,5 +1,5 @@
-SOURCE_URL=https://github.com/bfabiszewski/ulogger-server/archive/v1.0.zip
-SOURCE_SUM=aac2f69f64477b3a1c4265d19603fa32d9ba385f3e00358c0a4f08e7dcbb2020
+SOURCE_URL=https://github.com/bfabiszewski/ulogger-server/archive/v1.1.zip
+SOURCE_SUM=558B83214EF8DD04DEBF826D5330367D478EBD360A6DFD3C8328CDED07C0E1A9
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=zip
 SOURCE_IN_SUBDIR=true
