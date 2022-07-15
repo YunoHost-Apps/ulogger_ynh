@@ -162,8 +162,6 @@ ynh_store_file_checksum "$final_path/config.php"
 #=================================================
 
 # Set permissions to app files
-chown -R $app: $final_path
-
 chmod 755 -R $final_path
 chmod -R o-rwx $final_path
 chown -R $app:www-data $final_path
