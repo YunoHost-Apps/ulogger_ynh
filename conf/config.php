@@ -27,7 +27,7 @@
 // mysql:unix_socket=/tmp/mysql.sock;dbname=ulogger;charset=utf8
 // pgsql:host=localhost;port=5432;dbname=ulogger
 // sqlite:/tmp/ulogger.db
-$dbdsn = "mysql:host=localhost;port=3307;dbname=__DB_USER__;charset=utf8";
+$dbdsn = "mysql:host=localhost;port=3307;dbname=__DB_NAME__;charset=utf8";
 
 // Database user name
 $dbuser = "__DB_USER__";
