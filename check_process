@@ -3,11 +3,12 @@
 
 ;; Test complet
 	; Manifest
-		domain="domain.tld"	(DOMAIN)
-		path="/path"	(PATH)
-		admin="john"	
-		is_public=1	(PUBLIC|public=1|private=0)
+		domain="domain.tld"
+		path="/path"	
+		is_public=1
 		language="fr"
+		admin="john"
+		password="1Strong-Password"
 	; Checks
 		pkg_linter=1
 		setup_sub_dir=1

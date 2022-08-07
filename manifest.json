@@ -40,10 +40,6 @@
                 "default": "/ulogger"
             },
             {
-                "name": "admin",
-                "type": "user"
-            },
-            {
                 "name": "is_public",
                 "type": "boolean",
                 "help": {
@@ -59,8 +55,16 @@
                     "en": "Choose the application language",
                     "fr": "Choisissez la langue de l'application"
                 },
-                "choices": ["fr", "en", "pl", "de", "hu", "it" ],
+                "choices": ["de", "en", "fr", "hu", "it", "pl"],
                 "default": "en"
+            },
+            {
+                "name": "admin",
+                "type": "user"
+            },
+            {
+                "name": "password",
+                "type": "password"
             }
         ]
     }
