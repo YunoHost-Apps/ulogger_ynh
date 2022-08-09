@@ -22,6 +22,7 @@ Together with a dedicated [μlogger mobile client](https://github.com/bfabiszews
 
 **Shipped version:** 1.1~ynh1
 
+
 ## Screenshots
 
 ![Screenshot of ulogger](./doc/screenshots/screenshot.png)
