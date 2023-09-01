@@ -52,7 +52,7 @@ ram.runtime = "50M"
 [resources]
         [resources.sources.main]
         url = "https://github.com/bfabiszewski/ulogger-server/archive/v1.1.zip"
-        sha256 = "558B83214EF8DD04DEBF826D5330367D478EBD360A6DFD3C8328CDED07C0E1A9"
+        sha256 = "558b83214ef8dd04debf826d5330367d478ebd360a6dfd3c8328cded07c0e1a9"
         autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
