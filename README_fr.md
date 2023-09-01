@@ -27,18 +27,6 @@ Together with a dedicated [μlogger mobile client](https://github.com/bfabiszews
 
 ![Capture d’écran de ulogger](./doc/screenshots/screenshot.png)
 
-## Avertissements / informations importantes
-
-## Configuration
-
-### Login
-**Name:** The user selected during installation
-
-**Password:** Will be emailed to you immediately after installation
-
-### How to configure this app: 
-From an admin panel, or a plain file with SSH.
-
 ## Documentations et ressources
 
 * Site officiel de l’app : <https://github.com/bfabiszewski/ulogger-server>
