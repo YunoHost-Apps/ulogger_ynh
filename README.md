@@ -29,7 +29,6 @@ Together with a dedicated [μlogger mobile client](https://github.com/bfabiszews
 
 ## Documentation and resources
 
-* Official app website: <https://github.com/bfabiszewski/ulogger-server>
 * Upstream app code repository: <https://github.com/bfabiszewski/ulogger-server>
 * YunoHost documentation for this app: <https://yunohost.org/app_ulogger>
 * Report a bug: <https://github.com/YunoHost-Apps/ulogger_ynh/issues>
