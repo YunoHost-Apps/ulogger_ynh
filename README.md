@@ -5,7 +5,8 @@ It shall NOT be edited by hand.
 
 # ulogger for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/ulogger.svg)](https://dash.yunohost.org/appci/app/ulogger) ![Working status](https://ci-apps.yunohost.org/ci/badges/ulogger.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/ulogger.maintain.svg)  
+[![Integration level](https://dash.yunohost.org/integration/ulogger.svg)](https://dash.yunohost.org/appci/app/ulogger) ![Working status](https://ci-apps.yunohost.org/ci/badges/ulogger.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/ulogger.maintain.svg)
+
 [![Install ulogger with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ulogger)
 
 *[Lire ce readme en français.](./README_fr.md)*
@@ -21,7 +22,6 @@ Together with a dedicated [μlogger mobile client](https://github.com/bfabiszews
 
 
 **Shipped version:** 1.1~ynh1
-
 
 ## Screenshots
 
