@@ -23,8 +23,6 @@ ynh_script_progression --message="Setting up source files..."
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$install_dir"
 
-chown -R $app:www-data "$install_dir"
-
 #=================================================
 # PHP-FPM CONFIGURATION
 #=================================================
@@ -71,9 +69,9 @@ ynh_replace_string --match_string="^\$enabled = true;" --replace_string="\$enabl
 #=================================================
 
 # Set permissions to app files
-#chmod 755 -R $install_dir
-#chmod -R o-rwx $install_dir
-#chown -R $app:www-data $install_dir
+chmod 755 -R $install_dir
+chmod -R o-rwx $install_dir
+chown -R $app:www-data $install_dir
 
 #=================================================
 # END OF SCRIPT
