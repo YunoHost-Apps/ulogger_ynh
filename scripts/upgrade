@@ -27,7 +27,9 @@ then
 	ynh_setup_source --dest_dir="$install_dir" --keep="config.php"
 fi
 
-chown -R $app:www-data "$install_dir"
+chmod 755 -R $$install_dir
+chmod -R o-rwx $$install_dir
+chown -R $app:www-data $$install_dir
 
 #=================================================
 # PHP-FPM CONFIGURATION
