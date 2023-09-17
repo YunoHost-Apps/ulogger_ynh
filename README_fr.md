@@ -16,7 +16,7 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 
 ## Vue d’ensemble
 
-**μlogger** is a web application for real-time collection of geolocation data, tracks viewing and management. 
+μlogger is a web application for real-time collection of geolocation data, tracks viewing and management. 
 
 Together with a dedicated [μlogger mobile client](https://github.com/bfabiszewski/ulogger-android) it may be used as a complete self hosted server–client solution for logging and monitoring users' geolocation.
 
@@ -27,21 +27,8 @@ Together with a dedicated [μlogger mobile client](https://github.com/bfabiszews
 
 ![Capture d’écran de ulogger](./doc/screenshots/screenshot.png)
 
-## Avertissements / informations importantes
-
-## Configuration
-
-### Login
-**Name:** The user selected during installation
-
-**Password:** Will be emailed to you immediately after installation
-
-### How to configure this app: 
-From an admin panel, or a plain file with SSH.
-
 ## Documentations et ressources
 
-* Site officiel de l’app : <https://github.com/bfabiszewski/ulogger-server>
 * Dépôt de code officiel de l’app : <https://github.com/bfabiszewski/ulogger-server>
 * Documentation YunoHost pour cette app : <https://yunohost.org/app_ulogger>
 * Signaler un bug : <https://github.com/YunoHost-Apps/ulogger_ynh/issues>
