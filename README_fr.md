@@ -21,7 +21,7 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 Together with a dedicated [μlogger mobile client](https://github.com/bfabiszewski/ulogger-android) it may be used as a complete self hosted server–client solution for logging and monitoring users' geolocation.
 
 
-**Version incluse :** 1.1~ynh1
+**Version incluse :** 1.1~ynh2
 
 ## Captures d’écran
 
