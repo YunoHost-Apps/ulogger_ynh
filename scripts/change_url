@@ -1,17 +1,23 @@
 #!/bin/bash
 
 #=================================================
-# COMMON VARIABLES
+# GENERIC STARTING
+#=================================================
+# IMPORT GENERIC HELPERS
 #=================================================
 
-#=================================================
-# PERSONAL HELPERS
-#=================================================
+source _common.sh
+source /usr/share/yunohost/helpers
 
 #=================================================
-# EXPERIMENTAL HELPERS
+# MODIFY URL IN NGINX CONF
 #=================================================
+ynh_script_progression --message="Updating NGINX web server configuration..." --weight=3
+
+ynh_change_url_nginx_config
 
 #=================================================
-# FUTURE OFFICIAL HELPERS
+# END OF SCRIPT
 #=================================================
+
+ynh_script_progression --message="Change of URL completed for $app" --last

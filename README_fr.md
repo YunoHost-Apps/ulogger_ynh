@@ -5,44 +5,31 @@ It shall NOT be edited by hand.
 
 # ulogger pour YunoHost
 
-[![Niveau d'intégration](https://dash.yunohost.org/integration/ulogger.svg)](https://dash.yunohost.org/appci/app/ulogger) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/ulogger.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/ulogger.maintain.svg)  
+[![Niveau d’intégration](https://dash.yunohost.org/integration/ulogger.svg)](https://dash.yunohost.org/appci/app/ulogger) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/ulogger.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/ulogger.maintain.svg)
+
 [![Installer ulogger avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ulogger)
 
 *[Read this readme in english.](./README.md)*
 
-> *Ce package vous permet d'installer ulogger rapidement et simplement sur un serveur YunoHost.
-Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l'installer et en profiter.*
+> *Ce package vous permet d’installer ulogger rapidement et simplement sur un serveur YunoHost.
+Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l’installer et en profiter.*
 
-## Vue d'ensemble
+## Vue d’ensemble
 
-**μlogger** is a web application for real-time collection of geolocation data, tracks viewing and management. 
+μlogger is a web application for real-time collection of geolocation data, tracks viewing and management. 
 
 Together with a dedicated [μlogger mobile client](https://github.com/bfabiszewski/ulogger-android) it may be used as a complete self hosted server–client solution for logging and monitoring users' geolocation.
 
 
-**Version incluse :** 1.1~ynh1
+**Version incluse :** 1.1~ynh2
 
+## Captures d’écran
 
-## Captures d'écran
-
-![Capture d'écran de ulogger](./doc/screenshots/screenshot.png)
-
-## Avertissements / informations importantes
-
-## Configuration
-
-### Login
-**Name:** The user selected during installation
-
-**Password:** Will be emailed to you immediately after installation
-
-### How to configure this app: 
-From an admin panel, or a plain file with SSH.
+![Capture d’écran de ulogger](./doc/screenshots/screenshot.png)
 
 ## Documentations et ressources
 
-* Site officiel de l'app : <https://github.com/bfabiszewski/ulogger-server>
-* Dépôt de code officiel de l'app : <https://github.com/bfabiszewski/ulogger-server>
+* Dépôt de code officiel de l’app : <https://github.com/bfabiszewski/ulogger-server>
 * Documentation YunoHost pour cette app : <https://yunohost.org/app_ulogger>
 * Signaler un bug : <https://github.com/YunoHost-Apps/ulogger_ynh/issues>
 
@@ -58,4 +45,4 @@ ou
 sudo yunohost app upgrade ulogger -u https://github.com/YunoHost-Apps/ulogger_ynh/tree/testing --debug
 ```
 
-**Plus d'infos sur le packaging d'applications :** <https://yunohost.org/packaging_apps>
+**Plus d’infos sur le packaging d’applications :** <https://yunohost.org/packaging_apps>

@@ -5,7 +5,8 @@ It shall NOT be edited by hand.
 
 # ulogger for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/ulogger.svg)](https://dash.yunohost.org/appci/app/ulogger) ![Working status](https://ci-apps.yunohost.org/ci/badges/ulogger.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/ulogger.maintain.svg)  
+[![Integration level](https://dash.yunohost.org/integration/ulogger.svg)](https://dash.yunohost.org/appci/app/ulogger) ![Working status](https://ci-apps.yunohost.org/ci/badges/ulogger.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/ulogger.maintain.svg)
+
 [![Install ulogger with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ulogger)
 
 *[Lire ce readme en français.](./README_fr.md)*
@@ -15,33 +16,19 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 ## Overview
 
-**μlogger** is a web application for real-time collection of geolocation data, tracks viewing and management. 
+μlogger is a web application for real-time collection of geolocation data, tracks viewing and management. 
 
 Together with a dedicated [μlogger mobile client](https://github.com/bfabiszewski/ulogger-android) it may be used as a complete self hosted server–client solution for logging and monitoring users' geolocation.
 
 
-**Shipped version:** 1.1~ynh1
-
+**Shipped version:** 1.1~ynh2
 
 ## Screenshots
 
 ![Screenshot of ulogger](./doc/screenshots/screenshot.png)
 
-## Disclaimers / important information
-
-## Configuration
-
-### Login
-**Name:** The user selected during installation
-
-**Password:** Will be emailed to you immediately after installation
-
-### How to configure this app: 
-From an admin panel, or a plain file with SSH.
-
 ## Documentation and resources
 
-* Official app website: <https://github.com/bfabiszewski/ulogger-server>
 * Upstream app code repository: <https://github.com/bfabiszewski/ulogger-server>
 * YunoHost documentation for this app: <https://yunohost.org/app_ulogger>
 * Report a bug: <https://github.com/YunoHost-Apps/ulogger_ynh/issues>
