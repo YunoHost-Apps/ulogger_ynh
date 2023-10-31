@@ -30,7 +30,7 @@ Together with a dedicated [μlogger mobile client](https://github.com/bfabiszews
 ## Documentations et ressources
 
 * Dépôt de code officiel de l’app : <https://github.com/bfabiszewski/ulogger-server>
-* Documentation YunoHost pour cette app : <https://yunohost.org/app_ulogger>
+* YunoHost Store: <https://apps.yunohost.org/app/ulogger>
 * Signaler un bug : <https://github.com/YunoHost-Apps/ulogger_ynh/issues>
 
 ## Informations pour les développeurs
