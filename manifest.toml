@@ -5,7 +5,7 @@ name = "ulogger"
 description.en = "Real-time collection of geolocation data, tracks viewing and management"
 description.fr = "Géolocalisation en temps réel, gestion et affichage de traces"
 
-version = "1.1~ynh2"
+version = "v1.1~ynh1"
 
 maintainers = [""]
 
@@ -50,8 +50,8 @@ ram.runtime = "50M"
 
 [resources]
         [resources.sources.main]
-        url = "https://github.com/bfabiszewski/ulogger-server/archive/v1.1.zip"
-        sha256 = "558b83214ef8dd04debf826d5330367d478ebd360a6dfd3c8328cded07c0e1a9"
+        url = "https://github.com/bfabiszewski/ulogger-server/archive/refs/tags/v1.1.tar.gz"
+        sha256 = "f99c8d039fa5843e8329721635d94b03b02bb55d45eb51f752633245545dc2cd"
         autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
