@@ -3,7 +3,7 @@
 请勿手动编辑。
 -->
 
-# YunoHost 的 ulogger
+# YunoHost 上的 ulogger
 
 [![集成程度](https://dash.yunohost.org/integration/ulogger.svg)](https://dash.yunohost.org/appci/app/ulogger) ![工作状态](https://ci-apps.yunohost.org/ci/badges/ulogger.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/ulogger.maintain.svg)
 
