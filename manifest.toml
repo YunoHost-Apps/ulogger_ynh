@@ -7,7 +7,7 @@ description.fr = "Géolocalisation en temps réel, gestion et affichage de trace
 
 version = "1.2~ynh1"
 
-maintainers = [""]
+maintainers = []
 
 [upstream]
 license = "AGPL-3.0-only"
