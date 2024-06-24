@@ -21,7 +21,7 @@
 Together with a dedicated [μlogger mobile client](https://github.com/bfabiszewski/ulogger-android) it may be used as a complete self hosted server–client solution for logging and monitoring users' geolocation.
 
 
-**分发版本：** 1.1~ynh2
+**分发版本：** 1.2~ynh1
 
 ## 截图
 
