@@ -21,7 +21,7 @@ No se debe editar a mano.
 Together with a dedicated [μlogger mobile client](https://github.com/bfabiszewski/ulogger-android) it may be used as a complete self hosted server–client solution for logging and monitoring users' geolocation.
 
 
-**Versión actual:** 1.1~ynh2
+**Versión actual:** 1.2~ynh1
 
 ## Capturas
 
