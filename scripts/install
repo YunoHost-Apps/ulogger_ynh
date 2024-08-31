@@ -1,11 +1,5 @@
 #!/bin/bash
 
-#=================================================
-# GENERIC START
-#=================================================
-# IMPORT GENERIC HELPERS
-#=================================================
-
 source _common.sh
 source /usr/share/yunohost/helpers
 
@@ -18,7 +12,7 @@ admin_pwd=$(openssl passwd -1 -salt xyz $password)
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
-ynh_script_progression --message="Setting up source files..."
+ynh_script_progression "Setting up source files..."
 
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$install_dir"
@@ -26,55 +20,52 @@ ynh_setup_source --dest_dir="$install_dir"
 #=================================================
 # PHP-FPM CONFIGURATION
 #=================================================
-ynh_script_progression --message="Configuring PHP-FPM..."
+ynh_script_progression "Configuring PHP-FPM..."
 
 # Create a dedicated php-fpm config
-ynh_add_fpm_config --usage=low --footprint=low
+ynh_config_add_phpfpm
 
 # Create a dedicated nginx config
-ynh_add_nginx_config
+ynh_config_add_nginx
 
 #=================================================
 # MODIFY A CONFIG FILE
 #=================================================
-ynh_script_progression --message="Adding a configuration file..." --weight=1
+ynh_script_progression "Adding $app's configuration..."
 
-ynh_add_config --template="../conf/config.php" --destination="$install_dir/config.php"
+ynh_config_add --template="config.php" --destination="$install_dir/config.php"
 
-chmod 400 "$install_dir/config.php"
-chown $app:$app "$install_dir/config.php"
+#REMOVEME? Assuming the file is setup using ynh_config_add, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod 400 "$install_dir/config.php"
+#REMOVEME? Assuming the file is setup using ynh_config_add, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown $app:$app "$install_dir/config.php"
 
-ynh_replace_string --match_string="\$enabled = false;" --replace_string="\$enabled = true;" --target_file="$install_dir/scripts/setup.php"
+ynh_replace --match="\$enabled = false;" --replace="\$enabled = true;" --file="$install_dir/scripts/setup.php"
 
 # Replace variables in SQL scripts
-ynh_replace_string --match_string="__ADMIN__" --replace_string="$admin" --target_file="../conf/admin.sql"
-ynh_replace_string --match_string="__ADMIN_PWD__" --replace_string="$admin_pwd" --target_file="../conf/admin.sql"
+ynh_replace --match="__ADMIN__" --replace="$admin" --file="../conf/admin.sql"
+ynh_replace --match="__ADMIN_PWD__" --replace="$admin_pwd" --file="../conf/admin.sql"
 
 #=================================================
 # SETUP APPLICATION WITH CURL
 #=================================================
-ynh_script_progression --message="Finalizing installation..."
+ynh_script_progression "Finalizing installation..."
 
-ynh_local_curl "/scripts/setup.php" "command=setup" 
+ynh_local_curl "/scripts/setup.php" "command=setup"
 
 #Add the admin account to the database
-ynh_mysql_connect_as --user=$db_user --password="$db_pwd" --database=$db_name < "../conf/admin.sql"
+ynh_mysql_db_shell < "../conf/admin.sql"
 #Disable setup for security
-ynh_replace_string --match_string="^\$enabled = true;" --replace_string="\$enabled = false;" --target_file="$install_dir/scripts/setup.php"
+ynh_replace --match="^\$enabled = true;" --replace="\$enabled = false;" --file="$install_dir/scripts/setup.php"
 
-#=================================================
-# GENERIC FINALIZATION
 #=================================================
 # SECURE FILES AND DIRECTORIES
 #=================================================
 
 # Set permissions to app files
-chmod 755 -R $install_dir
-chmod -R o-rwx $install_dir
-chown -R $app:www-data $install_dir
-
+#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod 755 -R $install_dir
+#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod -R o-rwx $install_dir
+#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R $app:www-data $install_dir
 #=================================================
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Installation of $app completed"
+ynh_script_progression "Installation of $app completed"
