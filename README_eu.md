@@ -5,7 +5,9 @@ EZ editatu eskuz.
 
 # ulogger YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/ulogger.svg)](https://dash.yunohost.org/appci/app/ulogger) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/ulogger.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/ulogger.maintain.svg)
+[![Integrazio maila](https://apps.yunohost.org/badge/integration/ulogger)](https://ci-apps.yunohost.org/ci/apps/ulogger/)
+![Funtzionamendu egoera](https://apps.yunohost.org/badge/state/ulogger)
+![Mantentze egoera](https://apps.yunohost.org/badge/maintained/ulogger)
 
 [![Instalatu ulogger YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ulogger)
 
