@@ -5,7 +5,9 @@ Il NE doit PAS être modifié à la main.
 
 # ulogger pour YunoHost
 
-[![Niveau d’intégration](https://dash.yunohost.org/integration/ulogger.svg)](https://dash.yunohost.org/appci/app/ulogger) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/ulogger.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/ulogger.maintain.svg)
+[![Niveau d’intégration](https://apps.yunohost.org/badge/integration/ulogger)](https://ci-apps.yunohost.org/ci/apps/ulogger/)
+![Statut du fonctionnement](https://apps.yunohost.org/badge/state/ulogger)
+![Statut de maintenance](https://apps.yunohost.org/badge/maintained/ulogger)
 
 [![Installer ulogger avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ulogger)
 

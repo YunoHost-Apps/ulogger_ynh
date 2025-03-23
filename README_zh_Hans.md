@@ -5,7 +5,9 @@
 
 # YunoHost 上的 ulogger
 
-[![集成程度](https://dash.yunohost.org/integration/ulogger.svg)](https://dash.yunohost.org/appci/app/ulogger) ![工作状态](https://ci-apps.yunohost.org/ci/badges/ulogger.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/ulogger.maintain.svg)
+[![集成程度](https://apps.yunohost.org/badge/integration/ulogger)](https://ci-apps.yunohost.org/ci/apps/ulogger/)
+![工作状态](https://apps.yunohost.org/badge/state/ulogger)
+![维护状态](https://apps.yunohost.org/badge/maintained/ulogger)
 
 [![使用 YunoHost 安装 ulogger](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ulogger)
 
