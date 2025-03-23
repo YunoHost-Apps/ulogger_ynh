@@ -1,3 +1,5 @@
+#:schema https://raw.githubusercontent.com/YunoHost/apps/master/schemas/manifest.v2.schema.json
+
 packaging_format = 2
 
 id = "ulogger"
@@ -17,8 +19,11 @@ code = "https://github.com/bfabiszewski/ulogger-server"
 yunohost = ">= 11.2"
 architectures = "all"
 multi_instance = true
+
 ldap = false
+
 sso = false
+
 disk = "50M"
 ram.build = "50M"
 ram.runtime = "50M"
@@ -49,10 +54,10 @@ ram.runtime = "50M"
     type = "password"
 
 [resources]
-        [resources.sources.main]
-        url = "https://github.com/bfabiszewski/ulogger-server/archive/refs/tags/v1.2.tar.gz"
-        sha256 = "167b91307c2ad9fdf9e6fcfd70eec1fe74a4a9e9931279eaf846d688ab1bc22f"
-        autoupdate.strategy = "latest_github_tag"
+    [resources.sources.main]
+    url = "https://github.com/bfabiszewski/ulogger-server/archive/refs/tags/v1.2.tar.gz"
+    sha256 = "167b91307c2ad9fdf9e6fcfd70eec1fe74a4a9e9931279eaf846d688ab1bc22f"
+    autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
 

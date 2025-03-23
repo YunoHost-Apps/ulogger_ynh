@@ -5,7 +5,9 @@ No se debe editar a mano.
 
 # ulogger para Yunohost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/ulogger.svg)](https://dash.yunohost.org/appci/app/ulogger) ![Estado funcional](https://ci-apps.yunohost.org/ci/badges/ulogger.status.svg) ![Estado En Mantención](https://ci-apps.yunohost.org/ci/badges/ulogger.maintain.svg)
+[![Nivel de integración](https://apps.yunohost.org/badge/integration/ulogger)](https://ci-apps.yunohost.org/ci/apps/ulogger/)
+![Estado funcional](https://apps.yunohost.org/badge/state/ulogger)
+![Estado En Mantención](https://apps.yunohost.org/badge/maintained/ulogger)
 
 [![Instalar ulogger con Yunhost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ulogger)
 
@@ -35,7 +37,7 @@ Together with a dedicated [μlogger mobile client](https://github.com/bfabiszews
 
 ## Información para desarrolladores
 
-Por favor enviar sus correcciones a la [`branch testing`](https://github.com/YunoHost-Apps/ulogger_ynh/tree/testing
+Por favor enviar sus correcciones a la [rama `testing`](https://github.com/YunoHost-Apps/ulogger_ynh/tree/testing).
 
 Para probar la rama `testing`, sigue asÍ:
 
